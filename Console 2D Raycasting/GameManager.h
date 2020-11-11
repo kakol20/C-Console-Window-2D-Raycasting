@@ -33,8 +33,10 @@ public:
 	bool MainLoop();
 
 private:
+	void GenerateShadingChars();
+
 	void ControlPlayer();
-	void CalculateRays();
+	void CalculateRays(float step);
 	void DrawMap();
 
 	float DegreesToRadians(const float deg);
@@ -53,6 +55,9 @@ private:
 	std::chrono::time_point<std::chrono::system_clock> m_tp1 = std::chrono::system_clock::now();
 	std::chrono::time_point<std::chrono::system_clock> m_tp2 = std::chrono::system_clock::now();
 	float m_deltaTime = 0.0f;
+
+	// ascii shading
+	std::vector<short> m_shades = {};
 
 private:
 	GameManager() {}

@@ -20,6 +20,14 @@ void ConsoleManager::Initialise(int screenWidth, int screenHeight)
 	}
 }
 
+void ConsoleManager::Clear()
+{
+	for (int i = 0; i < screenHeight * screenWidth; i++)
+	{
+		screen[i] = ' ';
+	}
+}
+
 void ConsoleManager::Draw()
 {
 	screen[screenWidth * screenHeight - 1] = '\0';

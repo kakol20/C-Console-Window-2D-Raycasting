@@ -12,6 +12,8 @@ class ConsoleManager
 public:
 	void Initialise(int screenWidth, int screenHeight);
 
+	void Clear();
+
 	void Draw();
 
 	wchar_t* screen = new wchar_t[1];

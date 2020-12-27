@@ -33,6 +33,11 @@ void GameManager::Initialise()
 
 bool GameManager::MainLoop()
 {
+
+	// clear screen
+	TheConsole::Instance()->Clear();
+
+
 	m_tp2 = std::chrono::system_clock::now();
 	std::chrono::duration<float> deltaTimeCast = m_tp2 - m_tp1;
 	m_tp1 = m_tp2;
@@ -44,7 +49,7 @@ bool GameManager::MainLoop()
 	DrawMap();
 
 	// show stats
-	swprintf_s(TheConsole::Instance()->screen, TheConsole::Instance()->screenWidth, L"FPS:%3.2f", 1.0f / m_deltaTime);
+	swprintf_s(TheConsole::Instance()->screen, TheConsole::Instance()->screenWidth, L"FPS:%3.2f \0", 1.0f / m_deltaTime);
 
 	return true;
 }
